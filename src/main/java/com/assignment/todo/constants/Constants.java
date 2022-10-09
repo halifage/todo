@@ -11,4 +11,6 @@ public class Constants {
     public static final String DESCRIPTION_ERROR_MESSAGE = "Please provide a valid 'Description' for the task";
     public static final String STATE_MISSING_ERROR_MESSAGE = "Please provide a valid 'State' for the task";
     public static final String USER_ID = "userId";
+
+    public static final String ERROR_DELETING_ITEM_MESSAGE = "Unable to delete item with ID: ";
 }

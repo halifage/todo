@@ -7,7 +7,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.time.LocalDateTime;
@@ -45,6 +47,24 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
         ExceptionDto exceptionDto = new ExceptionDto(LocalDateTime.now(), httpStatus, errorMessage);
         return this.handleExceptionInternal(ex, exceptionDto, headers, httpStatus, request);
+    }
+
+    @ExceptionHandler({InvalidUserIdException.class})
+    public ResponseEntity<Object> handleInvalidUserId(RuntimeException exception, WebRequest request) {
+        ExceptionDto exceptionDto = new ExceptionDto(LocalDateTime.now(), HttpStatus.UNAUTHORIZED, exception.getMessage());
+        return this.handleExceptionInternal(exception, exceptionDto, new HttpHeaders(), exceptionDto.status(), request);
+    }
+
+    @ExceptionHandler({MethodArgumentTypeMismatchException.class})
+    public ResponseEntity<Object> handleInvalidArgumentType(RuntimeException exception, WebRequest request) {
+        ExceptionDto exceptionDto = new ExceptionDto(LocalDateTime.now(), HttpStatus.UNAUTHORIZED, AUTHENTICATION_ERROR_MESSAGE);
+        return this.handleExceptionInternal(exception, exceptionDto, new HttpHeaders(), exceptionDto.status(), request);
+    }
+
+    @ExceptionHandler({TodoItemDeleteException.class})
+    public ResponseEntity<Object> handleTodoDeleteException(RuntimeException exception, WebRequest request) {
+        ExceptionDto exceptionDto = new ExceptionDto(LocalDateTime.now(), HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());
+        return this.handleExceptionInternal(exception, exceptionDto, new HttpHeaders(), exceptionDto.status(), request);
     }
 
 }
