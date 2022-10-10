@@ -46,6 +46,7 @@ A custom exception handler is implemented to return consistent information.
 # cURL Commands
 ### 1. GET
 Fetch all TODO items
+
 **NB:** *The `userId` property is required with a value has to be greater than 0.*
 
 `curl localhost:8080/todo?userId=1`
