@@ -4,7 +4,6 @@ import com.assignment.todo.dto.Todo;
 import com.assignment.todo.enums.State;
 import com.assignment.todo.repository.TodoRepository;
 import config.RedisConfigurationTest;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
@@ -14,8 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 import static com.assignment.todo.enums.State.*;
 import static org.junit.jupiter.api.Assertions.*;
