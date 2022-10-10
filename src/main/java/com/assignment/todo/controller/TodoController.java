@@ -46,7 +46,7 @@ public class TodoController {
 
     @DeleteMapping("/todo")
     public ResponseEntity<Void> deleteTodoItem(@Valid @RequestBody Todo item) {
-        boolean isDeleted = todoService.deleteTodoItem(item);
+        boolean isDeleted = todoService.deleteTodoItemById(item.id());
         if (!isDeleted) {
             throw new TodoItemDeleteException(ERROR_DELETING_ITEM_MESSAGE + item.id());
         }

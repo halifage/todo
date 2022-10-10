@@ -28,7 +28,13 @@ public class TodoService {
     }
 
     public boolean deleteTodoItem(Todo item) {
-        todoRepository.delete(item);
+        todoRepository.deleteById(String.valueOf(item.id()));
         return !todoRepository.existsById(String.valueOf(item.id()));
+    }
+
+    public boolean deleteTodoItemById(long id) {
+        String idString = String.valueOf(id);
+        todoRepository.deleteById(idString);
+        return !todoRepository.existsById(idString);
     }
 }
