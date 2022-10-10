@@ -20,7 +20,7 @@ A custom exception handler is implemented to return consistent information.
 - On an Ubuntu server, install Redis:`sudo apt install redis`
 - Check installation: `redis-cli --version`
 
-**NB:** *By default the Redis server is started on Port 6379*
+**NB:** *By default the Redis server is started on port 6379 with no password*
 
 ### 2. Git
 - Install Git: `sudo apt install git`
@@ -33,7 +33,7 @@ A custom exception handler is implemented to return consistent information.
 - Clone project from Github: `git clone https://github.com/halifage/todo.git`
 - Navigate to the project's root folder: `cd todo/`
 
-- Configure Redis server host and port:
+- Configure Redis server host, port and password:
 
    If the Redis server is running on a host and/or port other than the default, update `application.properties` file:
 
