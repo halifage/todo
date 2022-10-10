@@ -23,10 +23,10 @@ A custom exception handler is implemented to return consistent information.
 **NB:** *By default the Redis server is started on Port 6379*
 
 ### 2. Git
-- Install Git: `sudo apt instal git`
+- Install Git: `sudo apt install git`
 
 ### 3. cURL
-- Install cURL: `sudo apt isntal curl`
+- Install cURL: `sudo apt install curl`
 
 ### 4. Spring Boot Server 
 - Navigate to the preferred directory: `cd [path to directory]`
