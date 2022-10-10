@@ -66,8 +66,7 @@ Update a TODO item in the data source (or add it if it doesn't exist).
 There is validation on some fields.
 
 `curl -X PUT -H "Content-Type: application/json"
--d '{"id":1,"userId":1,"description":"updated first todo","dueDate":"2022-10-12","state":"IN_PROGRESS"}' \
-localhost:8080/todo`
+-d '{"id":1,"userId":1,"description":"updated first todo","dueDate":"2022-10-12","state":"IN_PROGRESS"}' localhost:8080/todo`
 
 ### 4. DELETE
 Delete a TODO item from the data source.
